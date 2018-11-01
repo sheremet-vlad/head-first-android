@@ -1,6 +1,7 @@
 package com.hfad.stopwatch;
 
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,8 @@ import java.util.Locale;
 
 public class StopwatchActivity extends AppCompatActivity {
 
+    private static final String SECOND = "second";
+    private static final String IS_RUNNING = "isRunning";
     private int second = 0;
     private boolean isRunning;
 
@@ -17,6 +20,11 @@ public class StopwatchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
+
+        if (savedInstanceState != null) {
+            second = savedInstanceState.getInt(SECOND);
+            isRunning = savedInstanceState.getBoolean(IS_RUNNING);
+        }
 
         runTimer();
     }
@@ -57,5 +65,12 @@ public class StopwatchActivity extends AppCompatActivity {
                 handler.postDelayed(this, 1000);
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SECOND, second);
+        outState.putBoolean(IS_RUNNING, isRunning);
     }
 }
