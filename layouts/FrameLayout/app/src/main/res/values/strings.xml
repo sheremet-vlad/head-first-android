@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FrameLayout</string>
+    <string name="duck_text">It is a duck</string>
+    <string name="not_a_duck">(not a real)</string>
 </resources>
