@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BuyCoffeeLayout</string>
+    <string name="text_title">How do you like your coffee served?</string>
+    <string name="status_hot">Hot</string>
+    <string name="status_cold">Cold</string>
+    <string name="milk">Milk</string>
+    <string name="sugar">Sugar</string>
+    <string name="cinnamon">Cinnamon</string>
+    <string name="buy">Buy</string>
 </resources>
